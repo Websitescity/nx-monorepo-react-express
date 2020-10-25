@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/app1',
     '<rootDir>/apps/api',
     '<rootDir>/libs/api-interfaces',
+    '<rootDir>/apps/app2',
   ],
 };

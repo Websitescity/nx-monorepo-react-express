@@ -7,10 +7,11 @@ When using Nx, you can create multiple applications and libraries in the same wo
 
 Mono repo contains:
 
-- React app "app1" `apps\app1`
-- React app "app2" `apps\app2`
-- Express.js `apps\api`
-- Library of React component
+- React app "app1" `./apps/app1`
+- React app "app2" `./apps/app2`
+- Express.js `./apps/api`
+- Common interfaces `./libs/api-interfaces`
+- Library of React component `./libs/shared-components`
 
 All dependencies are in `./package.json`
 

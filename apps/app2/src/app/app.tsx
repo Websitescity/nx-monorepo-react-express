@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Message } from '@nx-monorepo/api-interfaces';
-
+import { SharedComponents } from '@nx-monorepo/shared-components';
 export const App = () => {
   const [m, setMessage] = useState<Message>({ message: '' });
 
@@ -14,6 +14,7 @@ export const App = () => {
     <>
       <div style={{ textAlign: 'center' }}>
         <h1>Welcome to app2!</h1>
+        <SharedComponents/>
         <img
           width="450"
           src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"

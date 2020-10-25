@@ -216,7 +216,8 @@
         "serve": {
           "builder": "@nrwl/web:dev-server",
           "options": {
-            "buildTarget": "app2:build"
+            "buildTarget": "app2:build",
+            "proxyConfig": "apps/app2/proxy.conf.json"
           },
           "configurations": {
             "production": {

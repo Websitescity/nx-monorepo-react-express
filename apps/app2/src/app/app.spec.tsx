@@ -1,18 +1,21 @@
+import { cleanup, getByText, render, wait } from '@testing-library/react';
 import React from 'react';
-import { render } from '@testing-library/react';
-
 import App from './app';
 
 describe('App', () => {
-  it('should render successfully', () => {
-    const { baseElement } = render(<App />);
-
-    expect(baseElement).toBeTruthy();
+  afterEach(() => {
+    delete global['fetch'];
+    cleanup();
   });
 
-  it('should have a greeting as the title', () => {
-    const { getByText } = render(<App />);
+  it('should render successfully', async () => {
+    global['fetch'] = jest.fn().mockResolvedValueOnce({
+      json: () => ({
+        message: 'my message',
+      }),
+    });
 
-    expect(getByText('Welcome to app2!')).toBeTruthy();
+    const { baseElement } = render(<App />);
+    await wait(() => getByText(baseElement, 'my message'));
   });
 });

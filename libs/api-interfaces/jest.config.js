@@ -1,14 +1,14 @@
 module.exports = {
-  displayName: 'api-interfaces',
-  preset: '../../jest.preset.js',
+  displayName: "api-interfaces",
+  preset: "../../jest.preset.js",
   globals: {
-    'ts-jest': {
-      tsConfig: '<rootDir>/tsconfig.spec.json',
-    },
+    "ts-jest": {
+      tsConfig: "<rootDir>/tsconfig.spec.json"
+    }
   },
   transform: {
-    '^.+\\.[tj]sx?$': 'ts-jest',
+    "^.+\\.[tj]sx?$": "ts-jest"
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/api-interfaces',
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
+  coverageDirectory: "../../coverage/libs/api-interfaces"
 };

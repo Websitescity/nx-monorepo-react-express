@@ -1,5 +1,5 @@
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-const rootWebpackConfig = require('../../../.storybook/webpack.config');
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+const rootWebpackConfig = require("../../../.storybook/webpack.config");
 /**
  * Export a function. Accept the base config as the only param.
  *
@@ -9,7 +9,7 @@ module.exports = async ({ config, mode }) => {
   config = await rootWebpackConfig({ config, mode });
 
   const tsPaths = new TsconfigPathsPlugin({
-    configFile: './tsconfig.base.json',
+    configFile: "./tsconfig.base.json"
   });
 
   config.resolve.plugins
@@ -22,7 +22,7 @@ module.exports = async ({ config, mode }) => {
   const svgRuleIndex = config.module.rules.findIndex((rule) => {
     const { test } = rule;
 
-    return test.toString().startsWith('/\\.(svg|ico');
+    return test.toString().startsWith("/\\.(svg|ico");
   });
   config.module.rules[
     svgRuleIndex
@@ -31,11 +31,11 @@ module.exports = async ({ config, mode }) => {
   config.module.rules.push(
     {
       test: /\.(png|jpe?g|gif|webp)$/,
-      loader: require.resolve('url-loader'),
+      loader: require.resolve("url-loader"),
       options: {
         limit: 10000, // 10kB
-        name: '[name].[hash:7].[ext]',
-      },
+        name: "[name].[hash:7].[ext]"
+      }
     },
     {
       test: /\.svg$/,
@@ -43,33 +43,33 @@ module.exports = async ({ config, mode }) => {
         // If coming from JS/TS file, then transform into React component using SVGR.
         {
           issuer: {
-            test: /\.[jt]sx?$/,
+            test: /\.[jt]sx?$/
           },
           use: [
-            '@svgr/webpack?-svgo,+titleProp,+ref![path]',
+            "@svgr/webpack?-svgo,+titleProp,+ref![path]",
             {
-              loader: require.resolve('url-loader'),
+              loader: require.resolve("url-loader"),
               options: {
                 limit: 10000, // 10kB
-                name: '[name].[hash:7].[ext]',
-                esModule: false,
-              },
-            },
-          ],
+                name: "[name].[hash:7].[ext]",
+                esModule: false
+              }
+            }
+          ]
         },
         // Fallback to plain URL loader.
         {
           use: [
             {
-              loader: require.resolve('url-loader'),
+              loader: require.resolve("url-loader"),
               options: {
                 limit: 10000, // 10kB
-                name: '[name].[hash:7].[ext]',
-              },
-            },
-          ],
-        },
-      ],
+                name: "[name].[hash:7].[ext]"
+              }
+            }
+          ]
+        }
+      ]
     }
   );
 

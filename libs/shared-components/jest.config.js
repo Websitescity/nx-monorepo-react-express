@@ -1,12 +1,12 @@
 module.exports = {
-  displayName: 'shared-components',
-  preset: '../../jest.preset.js',
+  displayName: "shared-components",
+  preset: "../../jest.preset.js",
   transform: {
-    '^.+\\.[tj]sx?$': [
-      'babel-jest',
-      { cwd: __dirname, configFile: './babel-jest.config.json' },
-    ],
+    "^.+\\.[tj]sx?$": [
+      "babel-jest",
+      { cwd: __dirname, configFile: "./babel-jest.config.json" }
+    ]
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/shared-components',
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
+  coverageDirectory: "../../coverage/libs/shared-components"
 };

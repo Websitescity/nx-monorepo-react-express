@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { Message } from '@nx-monorepo/api-interfaces';
-import { SharedComponents } from '@nx-monorepo/shared-components';
+import React, { useEffect, useState } from "react";
+import { Message } from "@nx-monorepo/api-interfaces";
+import { SharedComponents } from "@nx-monorepo/shared-components";
 export const App = () => {
-  const [m, setMessage] = useState<Message>({ message: '' });
+  const [m, setMessage] = useState<Message>({ message: "" });
 
   useEffect(() => {
-    fetch('/api')
+    fetch("/api")
       .then((r) => r.json())
       .then(setMessage);
   }, []);
 
   return (
     <>
-      <div style={{ textAlign: 'center' }}>
+      <div style={{ textAlign: "center" }}>
         <h1>Welcome to app1!</h1>
-        <SharedComponents/>
+        <SharedComponents />
         <img
           width="450"
           src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"

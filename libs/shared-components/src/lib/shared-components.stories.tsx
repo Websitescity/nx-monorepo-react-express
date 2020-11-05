@@ -1,9 +1,9 @@
-import React from 'react';
-import { SharedComponents, SharedComponentsProps } from './shared-components';
+import React from "react";
+import { SharedComponents, SharedComponentsProps } from "./shared-components";
 
 export default {
   component: SharedComponents,
-  title: 'SharedComponents',
+  title: "SharedComponents"
 };
 
 export const primary = () => {
